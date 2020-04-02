@@ -71,6 +71,30 @@ class LinkedList {
     previousNode.next = new _Node(item, currentNode.next);
     console.log('inserted ', previousNode.next);
   }
+  /**
+   * Inserts a new node after a given node containing a key
+   * @param {*} item the value you wish your inserted node to have
+   * @param {*} key the name of the node you want insert after
+   */
+  insertAfter(item, key){
+    // if the list is empty we can't insert before
+    if(this.head === null){
+      console.log('List is empty');
+      return;
+    }
+
+    let currentNode = this.head;
+    let previousNode = this.head;
+    
+    // while not at the end of the list and previousNode isnt equal to the key
+    while(currentNode !== null && previousNode.value !== key) {
+      // save the previous node
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    // do inverse of insertBEFORE here???
+
+  }
   remove(item){
     // if the list is empty
     if(!this.head){
