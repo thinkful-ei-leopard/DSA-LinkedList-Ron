@@ -41,7 +41,31 @@ class LinkedList {
     }
     tempNode.next = new _Node(item, null);
   }
-  remove() {
+  remove(item){
+    // if the list is empty
+    if(!this.head){
+      return null;
+    }
+    // If the node to be removed is head, make the next node head
+    if(this.head.value === item) {
+      this.head = this.head.next;
+      return;
+    }
+    // Start at the head
+    let currentNode = this.head;
+    // Keep track of previous
+    let previousNode = this.head;
+
+    while((currentNode !== null) && (currentNode.value !== item)) {
+      // Save the previous node
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    if(currentNode === null){
+      console.log('Item not found');
+      return;
+    }
+    previousNode.next = currentNode.next;
 
   }
   find(item){

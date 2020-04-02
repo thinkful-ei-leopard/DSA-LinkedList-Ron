@@ -8,4 +8,5 @@ function main() {
   ll.insertFirst(20);
 }
 
-main();
+const result = main();
+console.log(result);
