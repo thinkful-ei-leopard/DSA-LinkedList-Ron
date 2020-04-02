@@ -1,11 +1,16 @@
 const LinkedList = require('./linked-list');
 
 function main() {
-  let ll = new LinkedList(); // instantiating
+  let SLL = new LinkedList(); // instantiating
   
-  ll.insertFirst(5);
-  ll.insertFirst(3);
-  ll.insertFirst(20);
+  SLL.insertFirst('Apollo');
+  SLL.insertFirst('Boomer');
+  SLL.insertFirst('Helo');
+  SLL.insertFirst('Husker');
+  SLL.insertFirst('Starbuck');
+  SLL.insertFirst('Tauhida');
+  SLL.remove('squirrel');
+  
 }
 
 const result = main();

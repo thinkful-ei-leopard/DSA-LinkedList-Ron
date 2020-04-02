@@ -25,6 +25,7 @@ class LinkedList {
     // create new node with the data
     // direct head to the new node
     this.head = new _Node(item, this.head);
+    console.log(this.head);
   }
   insertLast(item){
     // handling edge case
