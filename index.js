@@ -10,7 +10,7 @@ function main() {
   SLL.insertFirst('Starbuck');
   SLL.insertFirst('Tauhida');
   SLL.remove('squirrel');
-  
+  SLL.insertBefore('Ronman', 'Boomer');
 }
 
 const result = main();

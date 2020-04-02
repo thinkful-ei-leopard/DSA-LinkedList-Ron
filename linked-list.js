@@ -25,7 +25,7 @@ class LinkedList {
     // create new node with the data
     // direct head to the new node
     this.head = new _Node(item, this.head);
-    console.log(this.head);
+    //console.log(this.head);
   }
   insertLast(item){
     // handling edge case
@@ -41,6 +41,35 @@ class LinkedList {
       tempNode = tempNode.next;
     }
     tempNode.next = new _Node(item, null);
+  }
+  /**
+   * Inserts a new node before a given node containing a key
+   * @param {*} item the value you wish your inserted node to have
+   * @param {*} key the name of the node you want insert before
+   */
+  insertBefore(item, key){
+    // if the list is empty we can't insert before
+    if(this.head === null){
+      console.log('List is empty');
+      return;
+    }
+
+    let currentNode = this.head;
+    let previousNode = this.head;
+    
+    while(currentNode !== null && currentNode.value !== key) {
+      // save the previous node
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    // if we reached the end of the list without finding the key
+    if(currentNode === null){
+      console.log(`key '${key}' not found`);
+      return;
+    }
+    // inserts new node before the key
+    previousNode.next = new _Node(item, currentNode.next);
+    console.log('inserted ', previousNode.next);
   }
   remove(item){
     // if the list is empty
@@ -67,7 +96,6 @@ class LinkedList {
       return;
     }
     previousNode.next = currentNode.next;
-
   }
   find(item){
     // start at the head
