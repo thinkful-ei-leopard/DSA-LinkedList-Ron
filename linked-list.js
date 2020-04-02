@@ -41,4 +41,31 @@ class LinkedList {
     }
     tempNode.next = new _Node(item, null);
   }
+  remove() {
+
+  }
+  find(item){
+    // start at the head
+    let currentNode = this.head;
+    // if the list is empty
+    if (!this.head) {
+      return null;
+    }
+    // check for the item
+    while (currentNode.value !== item) {
+      // Return null if it the end of the list
+      // and the item isn't on the list
+      if(currentNode.next === null) {
+        return null;
+      }
+      else {
+        // otherwise keep looking
+        currentNode = currentNode.next;
+      }
+    }
+    // Return found item
+    return currentNode;
+  }
 }
+
+module.exports = LinkedList;
